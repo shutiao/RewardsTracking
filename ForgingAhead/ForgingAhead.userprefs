@@ -1,0 +1,22 @@
+﻿<Properties StartupConfiguration="{DF8E171C-8028-41F8-A168-446B5D30E155}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Controllers/CharacterController.cs">
+    <Files>
+      <File FileName="../../TryDotNetMvc-CourseSampleCode/CharacterSheetApp/Views/Character/Index.cshtml" Line="6" Column="54" />
+      <File FileName="Startup.cs" Line="1" Column="1" />
+      <File FileName="Controllers/CharacterController.cs" Line="20" Column="10" />
+      <File FileName="Controllers/QuestController.cs" Line="1" Column="1" />
+      <File FileName="Models/Character.cs" Line="1" Column="1" />
+      <File FileName="Program.cs" Line="1" Column="1" />
+      <File FileName="bundleconfig.json" Line="1" Column="1" />
+      <File FileName="bower.json" Line="1" Column="1" />
+      <File FileName="Models/ApplicationDbContext.cs" Line="1" Column="1" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.ItemProperties.ForgingAhead PreferredExecutionTarget="MonoDevelop.Default" />
+  <MultiItemStartupConfigurations />
+</Properties>
