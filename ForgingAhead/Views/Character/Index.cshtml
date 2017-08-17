@@ -1,0 +1,20 @@
+@model List<ForgingAhead.Models.Character>
+
+<h2>All Character</h2>
+
+<a asp-controller="Character" asp-action="Create">Create new character</a>
+
+<h3>What if I create here</h3>
+<form asp-controller="Character" asp-action="Create">
+      <label asp-for="Name"></label>
+      <input asp-for="Name"/>
+      <input type="submit"/>
+</form>
+
+
+
+<ul>
+	@foreach (var c in Model){
+		 <li>@c.Name</li>
+		 }
+</ul>
