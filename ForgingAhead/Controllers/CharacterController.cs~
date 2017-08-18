@@ -13,12 +13,6 @@ namespace ForgingAhead.Controllers{
 		       var model = _context.Characters.ToList();
 		       return View("Index",model);
 		       }
-		       
-		 [HttpGet]
-		 public IActionResult Create(){
-		 	return View("Create");
-			}
-		       		       
 		 public IActionResult Create(Character character){
 		 	_context.Characters.Add(character);
 			_context.SaveChanges();

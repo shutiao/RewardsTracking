@@ -34,3 +34,12 @@ C:/Users/ericjfisher/Documents/GitHub/ForgingAheadWithDotNetMvc-CourseSampleCode
 /Users/hxu/Google Drive/Dev/forgingAheadWithDotNetMvc/ForgingAhead/obj/Debug/netcoreapp1.1/ForgingAhead.pdb
 /Users/hxu/Google Drive/Dev/forgingAheadWithDotNetMvc/ForgingAhead/bin/Debug/netcoreapp1.1/ForgingAhead.dll
 /Users/hxu/Google Drive/Dev/forgingAheadWithDotNetMvc/ForgingAhead/bin/Debug/netcoreapp1.1/ForgingAhead.pdb
+/Users/xuhaihua/Projects/forgingAheadWithDotNetMvc/ForgingAhead/bin/Debug/netcoreapp1.1/ForgingAhead.deps.json
+/Users/xuhaihua/Projects/forgingAheadWithDotNetMvc/ForgingAhead/bin/Debug/netcoreapp1.1/ForgingAhead.runtimeconfig.json
+/Users/xuhaihua/Projects/forgingAheadWithDotNetMvc/ForgingAhead/bin/Debug/netcoreapp1.1/ForgingAhead.runtimeconfig.dev.json
+/Users/xuhaihua/Projects/forgingAheadWithDotNetMvc/ForgingAhead/bin/Debug/netcoreapp1.1/ForgingAhead.dll
+/Users/xuhaihua/Projects/forgingAheadWithDotNetMvc/ForgingAhead/bin/Debug/netcoreapp1.1/ForgingAhead.pdb
+/Users/xuhaihua/Projects/forgingAheadWithDotNetMvc/ForgingAhead/obj/Debug/netcoreapp1.1/ForgingAhead.csprojResolveAssemblyReference.cache
+/Users/xuhaihua/Projects/forgingAheadWithDotNetMvc/ForgingAhead/obj/Debug/netcoreapp1.1/ForgingAhead.AssemblyInfo.cs
+/Users/xuhaihua/Projects/forgingAheadWithDotNetMvc/ForgingAhead/obj/Debug/netcoreapp1.1/ForgingAhead.dll
+/Users/xuhaihua/Projects/forgingAheadWithDotNetMvc/ForgingAhead/obj/Debug/netcoreapp1.1/ForgingAhead.pdb
