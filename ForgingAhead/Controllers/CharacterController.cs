@@ -11,11 +11,14 @@ namespace ForgingAhead.Controllers{
 			}
 		public IActionResult Index(){
 		       var model = _context.Characters.ToList();
+		       // ViewData is a property of the controller
+		       ViewData["Title"] = "Charatcers";
 		       return View("Index",model);
 		       }
 		       
 		 [HttpGet]
 		 public IActionResult Create(){
+		 	ViewData["Title"] = "Create";
 		 	return View("Create");
 			}
 		       		       
@@ -24,5 +27,11 @@ namespace ForgingAhead.Controllers{
 			_context.SaveChanges();
 			return RedirectToAction("Index");
 			}
-		}
+		
+		[HttpGet]
+		public IActionResult Details(string name){
+		       var model = _context.Characters.FirstOrDefault(e => e.Name == name);
+		       return View("Details",model);
+		       }
+	}
 }

@@ -4,17 +4,11 @@
 
 <a asp-controller="Character" asp-action="Create">Create new character</a>
 
-<h3>What if I create here</h3>
-<form asp-controller="Character" asp-action="Create">
-      <label asp-for="Name"></label>
-      <input asp-for="Name"/>
-      <input type="submit"/>
-</form>
-
-
-
 <ul>
 	@foreach (var c in Model){
-		 <li>@c.Name</li>
+		 <li>
+		 <a asp-action="Details" asp-controller="Character" asp-route-name="@c.Name">
+		    @c.Name
+		 </a></li>
 		 }
 </ul>

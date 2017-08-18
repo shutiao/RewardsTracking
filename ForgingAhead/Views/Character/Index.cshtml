@@ -1,11 +1,18 @@
 @model List<ForgingAhead.Models.Character>
 
+@section header{
+	 <meta name="description" context="Lists all characters in ForgingAhead." >
+}
+
 <h2>All Character</h2>
 
 <a asp-controller="Character" asp-action="Create">Create new character</a>
 
 <ul>
 	@foreach (var c in Model){
-		 <li>@c.Name</li>
+		 <li>
+		 <a asp-action="Details" asp-controller="Character" asp-route-name="@c.Name">
+		    @c.Name
+		 </a></li>
 		 }
 </ul>
