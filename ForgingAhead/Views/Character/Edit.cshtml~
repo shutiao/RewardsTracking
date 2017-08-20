@@ -1,0 +1,7 @@
+@model ForgingAhead.Models.Character
+<h2>Edit Character: @Model.Name</h2>
+
+<form asp-action="Update" asp-controller="Character">
+      @html.EditorForModel()
+      <input type="submit" value="Update" class="btn btn-default"/>
+</form>

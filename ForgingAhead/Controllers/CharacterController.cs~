@@ -5,10 +5,13 @@ using System.Linq;
 
 namespace ForgingAhead.Controllers{
 	  public class CharacterController : Controller{
-	  	 private readonly ApplicationDbContext _context;
+	  	 
+		 private readonly ApplicationDbContext _context;
+		 
 		 public CharacterController(ApplicationDbContext context){
 		 	_context = context;
 			}
+			
 		public IActionResult Index(){
 		       var model = _context.Characters.ToList();
 		       // ViewData is a property of the controller
@@ -23,15 +26,23 @@ namespace ForgingAhead.Controllers{
 			}
 		       		       
 		 public IActionResult Create(Character character){
+		 	ViewData["Title"] = "Create";
 		 	_context.Characters.Add(character);
 			_context.SaveChanges();
 			return RedirectToAction("Index");
 			}
 		
-		[HttpGet]
 		public IActionResult Details(string name){
+		       ViewData["Title"] = name + "'s Detail";
 		       var model = _context.Characters.FirstOrDefault(e => e.Name == name);
 		       return View("Details",model);
 		       }
+		      
+		public IActionResult Edit(string name){
+		       ViewData["Title"] = "Edit " + name;
+		       var model = _context.Characters.FirstOrDefault(e => e.Name == name);
+		       return View("Edit",model);
+		       }
+		      
 	}
 }

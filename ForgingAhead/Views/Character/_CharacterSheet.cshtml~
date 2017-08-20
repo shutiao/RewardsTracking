@@ -1,8 +1,8 @@
 @model ForgingAhead.Models.Character
 
 <div class="col-md-5 bordered-div"
-     <h4>Model.Name</h4>
-     <hr/>
+     <h4>@Model.Name</h4></br>
+     <a asp-controller="Character" asp-action="Edit" asp-route-name="@Model.Name">Edit</a><br>
      <label asp-for="IsActive"></label>
      <p class="form-control-static">@Model.IsActive</p>
 </div>
