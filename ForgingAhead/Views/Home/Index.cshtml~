@@ -4,6 +4,7 @@
 
 <ul>
 	@foreach (var c in Model){
-	 <li>@c.Name</li>
+	 c.Name
+	 
 	 }
 </ul>

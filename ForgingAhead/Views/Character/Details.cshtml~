@@ -1,4 +1,6 @@
-@model <ForgingAhead.Models.Character>
+@model ForgingAhead.Models.Character
+
+@Html.Partial("_CharacterSheet",Model)
 
 <h2> Detail Page </h2>
      <p>
