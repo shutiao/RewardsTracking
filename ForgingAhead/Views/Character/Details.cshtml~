@@ -1,4 +1,4 @@
-@model ForgingAhead.Models.Character
+@model <ForgingAhead.Models.Character>
 
 <h2> Detail Page </h2>
      <p>

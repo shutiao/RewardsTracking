@@ -28,7 +28,7 @@ namespace ForgingAhead.Controllers{
 			return RedirectToAction("Index");
 			}
 		
-		[HttpGet]
+
 		public IActionResult Details(string name){
 		       var model = _context.Characters.FirstOrDefault(e => e.Name == name);
 		       return View("Details",model);

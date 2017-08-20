@@ -18,6 +18,7 @@ namespace ForgingAhead.Controllers{
 		       
 		 [HttpGet]
 		 public IActionResult Create(){
+		 	ViewData["Title"] = "Create";
 		 	return View("Create");
 			}
 		       		       
