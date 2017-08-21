@@ -43,6 +43,22 @@ namespace ForgingAhead.Controllers{
 		       var model = _context.Characters.FirstOrDefault(e => e.Name == name);
 		       return View("Edit",model);
 		       }
+
+		public IActionResult Update(Character character){
+		       ViewData["Title"] = "Update" + character.Name;
+		       _context.Entry(character).State = EntityState.Modified;
+		       _context.SaveChanges();	       
+		       return RedirectToAction("Index");
+		       }
 		      
+		public IActionResult Delete(string name){
+		       ViewData["Title"] = "Delete " + name;
+		       var entityD = context.Characters.FirstOrDefault(e=>e.Name == name);
+		       if(entityD != null){
+		       		  _context.Characters.Remove(entityD);	
+				  _context.SaveChanges();
+				  }
+			return RedirectToAction("Index");
+			}
 	}
 }

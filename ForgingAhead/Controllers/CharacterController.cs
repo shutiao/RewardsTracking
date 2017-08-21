@@ -51,5 +51,14 @@ namespace ForgingAhead.Controllers{
 		       return RedirectToAction("Index");
 		       }
 		      
+		public IActionResult Delete(string name){
+		       ViewData["Title"] = "Delete " + name;
+		       var entityD = _context.Characters.FirstOrDefault(e=>e.Name == name);
+		       if(entityD != null){
+		       		  _context.Characters.Remove(entityD);	
+				  _context.SaveChanges();
+				  }
+			return RedirectToAction("Index");
+			}
 	}
 }
