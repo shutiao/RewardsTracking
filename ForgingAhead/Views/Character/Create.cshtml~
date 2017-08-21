@@ -9,5 +9,5 @@
       <input asp-for="IsActive"/>
       -->
       <input type="submit"/>
-
+      <div asp-validation-summary="All"></div>
 </form>

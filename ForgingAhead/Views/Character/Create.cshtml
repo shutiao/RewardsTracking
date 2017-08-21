@@ -1,13 +1,17 @@
 @model ForgingAhead.Models.Character
 <h2> Hello This is Character/Creare </h2>
 <form asp-action="Create" asp-controller="Character">
-      @Html.EditorForModel()
       <!--
+      @Html.EditorForModel()
+      -->
+      
       <label asp-for="Name"></label>
       <input asp-for="Name"/>
       <label asp-for="IsActive"></label>
       <input asp-for="IsActive"/>
-      -->
+      <label asp-for="Level"></label>
+      <input asp-for="Level"/>
+       
       <input type="submit"/>
       <div asp-validation-summary="All"></div>
 </form>

@@ -26,7 +26,7 @@ namespace ForgingAhead.Controllers{
 			}
 		       		       
 		 public IActionResult Create(Character character){
-		 	if(_context_Characters.Any(e => e.Name == character.Name))
+		 	if(_context.Characters.Any(e => e.Name == character.Name))
 				ModelState.AddModelError("Name","Name is already in use.");
 		 	ViewData["Title"] = "Create";
 			if(!ModelState.IsValid)
@@ -36,10 +36,10 @@ namespace ForgingAhead.Controllers{
 			return RedirectToAction("Index");
 			}
 			
-		[Route("Character/{name}/Details")]		
-		public IActionResult Details(string name){
-		       ViewData["Title"] = name + "'s Detail";
-		       var model = _context.Characters.FirstOrDefault(e => e.Name == name);
+		[Route("Character/{id}/Details")]		
+		public IActionResult Details(int id){
+		       ViewData["Title"] = id + "'s Detail";
+		       var model = _context.Characters.FirstOrDefault(e => e.Id == id);
 		       return View("Details",model);
 		       }
 		      

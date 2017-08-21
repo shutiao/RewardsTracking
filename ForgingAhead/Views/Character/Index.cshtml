@@ -11,7 +11,7 @@
 <ul>
 	@foreach (var c in Model){
 		 <li>
-		 <a asp-action="Details" asp-controller="Character" asp-route-name="@c.Name">
+		 <a asp-action="Details" asp-controller="Character" asp-route-id="@c.Id">
 		    @c.Name
 		 </a></li>
 		 }
@@ -27,8 +27,8 @@
 		 <tr>
 			<td>@c.Name</td>
 		<td>
-			<a asp-action="Edit" asp-route-name="@c.Name">Edit</a> |
-			<a asp-action="Details" asp-route-name="@c.Name">Details</a> |
+			<a asp-action="Edit" asp-route-id="@c.Id">Edit</a> |
+			<a asp-action="Details" asp-route-id="@c.Id">Details</a> |
 			<a asp-action="Delete" asp-route-name="@c.Name">Delete</a>
 		</td>
 		</tr>

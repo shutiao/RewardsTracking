@@ -36,16 +36,16 @@ namespace ForgingAhead.Controllers{
 			return RedirectToAction("Index");
 			}
 			
-		[Route("Character/{name}/Details")]		
-		public IActionResult Details(string name){
-		       ViewData["Title"] = name + "'s Detail";
-		       var model = _context.Characters.FirstOrDefault(e => e.Name == name);
+		[Route("Character/{id}/Details")]		
+		public IActionResult Details(int id){
+		       ViewData["Title"] = id + "'s Detail";
+		       var model = _context.Characters.FirstOrDefault(e => e.Id == id);
 		       return View("Details",model);
 		       }
 		      
-		public IActionResult Edit(string name){
-		       ViewData["Title"] = "Edit " + name;
-		       var model = _context.Characters.FirstOrDefault(e => e.Name == name);
+		public IActionResult Edit(int id){
+		       ViewData["Title"] = "Edit " + id;
+		       var model = _context.Characters.FirstOrDefault(e => e.Id == id);
 		       return View("Edit",model);
 		       }
 
