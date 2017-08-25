@@ -7,16 +7,12 @@
 <label for="TotalRewards">Total Rewards</label>
 <p>@Model.TotalRewards</p>
 
-<h2>Scores</h2>
+<h2>Rewards</h2>
 <form asp-controller="Character" asp-action="AddReward" asp-route-name="@Model.Name">
-      <input type="number" name="Value" id="Value" />
-      
-      <!--
-      <label asp-for="Value"></label>
-      <input asp-for="Value"/>
-      <label asp-for="Description"></label>
-      <input asp-for="Description"/>
-      -->
+      <label>Points</label>
+      <input type="number" name="value" id="value" />
+      <lavel>Description</label>
+      <input type="text" name="Description"/>
       <input type="submit"/>
 </form>
 
@@ -25,3 +21,18 @@
 		<li>@entry.Value</li>
 		}
 </ul>
+
+<table class="table">
+       <thread>
+	<tr>
+		<th>Points</th>
+		<th>Description</th>
+	</tr>
+	</thread>
+	<tr>
+		@foreach (var rEntry in @Model.Rewards){
+			 <th>@rEntry.Value</th>
+			 <th>@rEntry.Description</th>
+			 }
+	</tr>
+</table>

@@ -14,7 +14,7 @@ namespace ForgingAhead.Controllers{
 			}
 			
 		public IActionResult Index(){
-		       var model = _context.Characters.ToList();
+		       var model = _context.Characters.Include(e => e.Rewards).ToList();
 		       // ViewData is a property of the controller
 		       ViewData["Title"] = "Charatcers";
 		       return View("Index",model);
@@ -40,7 +40,11 @@ namespace ForgingAhead.Controllers{
 		
 		public IActionResult Details(string name){
 		       ViewData["Title"] = name + "'s Detail";
-		       var model = _context.Characters.FirstOrDefault(e => e.Name == name);
+		       var model = _context.Characters.Include(e => e.Rewards).FirstOrDefault(e => e.Name == name);
+		       Console.WriteLine("Validate Details");
+		       foreach (var reward in model.Rewards){
+		       	       Console.WriteLine(reward.Value);
+			       }
 		       return View("Details",model);
 		       }
 		      
@@ -67,17 +71,16 @@ namespace ForgingAhead.Controllers{
 			return RedirectToAction("Index");
 			}
 
-		public IActionResult AddReward(string name, int value){
-		       Console.WriteLine(name);
-		       Console.WriteLine(value);
-		       var reward = new Reward {Value = value};
+		public IActionResult AddReward(string name, int value, string description){
+		       var reward = new Reward {Value = value, Description = description};
 		       _context.Characters.FirstOrDefault(e => e.Name == name).Rewards.Add(reward);
 		       _context.SaveChanges();
+		       Console.WriteLine("Validate Rewards List");
 		       foreach (var p in _context.Characters.FirstOrDefault(e=>e.Name==name).Rewards){
 		       	       Console.WriteLine(p.Value);
 			       }
 		       return RedirectToAction("Index");
-		       //return RedirectToAction("Details",name);
+		       //return RedirectToAction("Details","Character",new { name = name});
 		       }
 	}
 }

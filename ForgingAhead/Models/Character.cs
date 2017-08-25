@@ -17,6 +17,7 @@ namespace ForgingAhead.Models{
 		 [Range(1,20)]
 		 public int Level { get;set; }
 		 
+		 		 
 		 public List<Reward> Rewards { get; set; } = new List<Reward>();
 
 		 public int TotalRewards { get { return Rewards.Sum(e => e.Value); } }
