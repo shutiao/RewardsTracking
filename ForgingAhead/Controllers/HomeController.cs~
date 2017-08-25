@@ -14,5 +14,6 @@ namespace ForgingAhead.Controllers{
 		       var model = _context.Characters.Where(e => e.IsActive).ToList();	
 		       return View("Index",model);
 		       }
+				
 	}
 }

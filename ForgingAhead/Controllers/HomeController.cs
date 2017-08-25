@@ -11,6 +11,7 @@ namespace ForgingAhead.Controllers{
 		 	_context = context;
 			}
 		public IActionResult Index(){
+		       ViewData["Title"] = "Show All Active";
 		       var model = _context.Characters.Where(e => e.IsActive).ToList();	
 		       return View("Index",model);
 		       }

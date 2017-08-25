@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.Mvc;
 using ForgingAhead.Models;
 using Microsoft.EntityFrameworkCore;
 using System.Linq;
+using System;
 
 namespace ForgingAhead.Controllers{
 	  public class CharacterController : Controller{
@@ -36,16 +37,16 @@ namespace ForgingAhead.Controllers{
 			return RedirectToAction("Index");
 			}
 			
-		[Route("Character/{id}/Details")]		
-		public IActionResult Details(int id){
-		       ViewData["Title"] = id + "'s Detail";
-		       var model = _context.Characters.FirstOrDefault(e => e.Id == id);
+		
+		public IActionResult Details(string name){
+		       ViewData["Title"] = name + "'s Detail";
+		       var model = _context.Characters.FirstOrDefault(e => e.Name == name);
 		       return View("Details",model);
 		       }
 		      
-		public IActionResult Edit(string name){
-		       ViewData["Title"] = "Edit " + name;
-		       var model = _context.Characters.FirstOrDefault(e => e.Name == name);
+		public IActionResult Edit(int id){
+		       ViewData["Title"] = "Edit " + id;
+		       var model = _context.Characters.FirstOrDefault(e => e.Id == id);
 		       return View("Edit",model);
 		       }
 
@@ -65,5 +66,18 @@ namespace ForgingAhead.Controllers{
 				  }
 			return RedirectToAction("Index");
 			}
+
+		public IActionResult AddReward(string name, int value){
+		       Console.WriteLine(name);
+		       Console.WriteLine(value);
+		       var reward = new Reward {Value = value};
+		       _context.Characters.FirstOrDefault(e => e.Name == name).Rewards.Add(reward);
+		       _context.SaveChanges();
+		       foreach (var p in _context.Characters.FirstOrDefault(e=>e.Name==name).Rewards){
+		       	       Console.WriteLine(p.Value)
+			       }
+		       return RedirectToAction("Index");
+		       //return RedirectToAction("Details",name);
+		       }
 	}
 }

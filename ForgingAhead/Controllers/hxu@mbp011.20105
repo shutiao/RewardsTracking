@@ -2,7 +2,6 @@ using Microsoft.AspNetCore.Mvc;
 using ForgingAhead.Models;
 using Microsoft.EntityFrameworkCore;
 using System.Linq;
-using System;
 
 namespace ForgingAhead.Controllers{
 	  public class CharacterController : Controller{
@@ -68,15 +67,11 @@ namespace ForgingAhead.Controllers{
 			}
 
 		public IActionResult AddReward(string name, int value){
-		       Console.WriteLine(name);
-		       Console.WriteLine(value);
-		       var reward = new Reward {Value = value};
-		       _context.Characters.FirstOrDefault(e => e.Name == name).Rewards.Add(reward);
-		       _context.SaveChanges();
-		       foreach (var p in _context.Characters.FirstOrDefault(e=>e.Name==name).Rewards){
-		       	       Console.WriteLine(p.Value);
-			       }
-		       return RedirectToAction("Index");
+		       var character = _context.Characters.FirstOrDefault(e => e.Name == name);
+		       var reward = new Reward();
+		       reward.Value = value;
+		       character.Rewards.Add(reward);
+		       return View("Index");
 		       //return RedirectToAction("Details",name);
 		       }
 	}

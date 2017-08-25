@@ -1,10 +1,27 @@
 @model ForgingAhead.Models.Character
 
+<h2>Detail Page </h2>
+
 @Html.Partial("_CharacterSheet",Model)
 
-<h2> Detail Page </h2>
-     <p>
-     @Model.Name
-     @Model.IsActive
-     </p>
-</h2>
+<label for="TotalRewards">Total Rewards</label>
+<p>@Model.TotalRewards</p>
+
+<h2>Scores</h2>
+<form asp-controller="Character" asp-action="AddReward" asp-route-name="@Model.Name">
+      <input type="number" name="Value" id="Value" />
+      
+      <!--
+      <label asp-for="Value"></label>
+      <input asp-for="Value"/>
+      <label asp-for="Description"></label>
+      <input asp-for="Description"/>
+      -->
+      <input type="submit"/>
+</form>
+
+<ul>
+	@foreach (var entry in @Model.Rewards){
+		<li>@entry.Value</li>
+		}
+</ul>
