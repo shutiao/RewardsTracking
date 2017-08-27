@@ -1,12 +1,12 @@
 @model List<ForgingAhead.Models.Character>
 
 @section header{
-	 <meta name="description" context="Lists all characters in ForgingAhead." >
+	 <meta name="description" context="Lists all program rewards in your wallet" >
 }
 
-<h2>All Character</h2>
+<h2>All Rewards Program</h2>
 
-<a asp-controller="Character" asp-action="Create">Create new character</a>
+<a asp-controller="Character" asp-action="Create">Create new program</a>
 
 <ul>
 	@foreach (var c in Model){
@@ -20,7 +20,7 @@
 
 <table class="table">
        <thread><tr>
-	<th>Character</th>
+	<th>Program</th>
 	<th>Rewards Points</th>
 	<th>Action</th>
 	</tr></thread>

@@ -27,7 +27,7 @@
 	@foreach (var c in Model){
 		 <tr>
 			<td>@c.Name</td>
-			<td>c.Points</td>
+			<td>@c.TotalRewards</td>
 		<td>
 			<a asp-action="Edit" asp-route-id="@c.Id">Edit</a> |
 			<a asp-action="Details" asp-route-name="@c.Name">Details</a> |

@@ -24,12 +24,10 @@
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                     <li><a asp-controller="Home" asp-action="Index">Home</a></li>
-                    <li><a asp-controller="Character" asp-action="Index">Programs</a></li>
-                    <!--
-		    <li><a asp-controller="Equipment" asp-action="Index">Equipment</a></li>
+                    <li><a asp-controller="Character" asp-action="Index">Characters</a></li>
+                    <li><a asp-controller="Equipment" asp-action="Index">Equipment</a></li>
                     <li><a asp-controller="Quest" asp-action="Index">Quests</a>
-                    -->
-		    <li>
+                    <li>
                 </ul>
             </div>
         </div>
@@ -38,7 +36,7 @@
         @RenderBody()
         <hr />
         <footer>
-            <p>&copy; 2017 - Shutiao</p>
+            <p>&copy; 2016 - ForgingAhead</p>
         </footer>
     </div>
 
